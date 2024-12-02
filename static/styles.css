@@ -1,0 +1,124 @@
+:root[data-theme="light"] {
+    --bg-color: #f8f9fa;
+    --text-color: #212529;
+    --table-bg: white;
+    --table-border: #dee2e6;
+    --input-bg: white;
+    --input-border: #ced4da;
+    --hover-bg: #f8f9fa;
+}
+
+:root[data-theme="dark"] {
+    --bg-color: #212529;
+    --text-color: #f8f9fa;
+    --table-bg: #343a40;
+    --table-border: #495057;
+    --input-bg: #343a40;
+    --input-border: #495057;
+    --hover-bg: #2c3034;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+.table {
+    background-color: var(--table-bg);
+    color: var(--text-color);
+    border-color: var(--table-border);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.table thead th {
+    background-color: var(--hover-bg);
+    border-color: var(--table-border);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--hover-bg);
+}
+
+#refresh-btn {
+    transition: all 0.3s ease;
+}
+
+#refresh-btn:hover {
+    transform: scale(1.05);
+}
+
+#search-input, #quick-filters {
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border-color: var(--input-border);
+    border-radius: 4px;
+    padding: 8px 12px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+#search-input:focus, #quick-filters:focus {
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    outline: none;
+}
+
+#quick-filters {
+    cursor: pointer;
+}
+
+#quick-filters:hover {
+    border-color: #86b7fe;
+}
+
+#theme-toggle {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Show/hide icons based on theme */
+html[data-theme="light"] .light-icon,
+html[data-theme="dark"] .dark-icon {
+    display: none;
+}
+
+/* Dark mode specific styles */
+html[data-theme="dark"] .table {
+    border-color: var(--table-border);
+}
+
+html[data-theme="dark"] .btn-outline-primary {
+    color: #6ea8fe;
+    border-color: #6ea8fe;
+}
+
+html[data-theme="dark"] .btn-outline-primary:hover {
+    background-color: #6ea8fe;
+    color: #212529;
+}
+
+html[data-theme="dark"] .btn-primary {
+    background-color: #6ea8fe;
+    border-color: #6ea8fe;
+    color: #212529;
+}
+
+html[data-theme="dark"] .btn-primary:hover {
+    background-color: #3d8bfd;
+    border-color: #3d8bfd;
+}
